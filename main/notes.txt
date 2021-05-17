@@ -1,0 +1,26 @@
+ n
+
+just some spare code i have lying around
+library used discord.js
+
+
+
+Setup
+
+
+
+    if(message.channel.name=='saturnly-setup'){
+        message.channel.send(new Discord.MessageEmbed()
+        .setColor(hexSat)
+        .setTitle('Saturnly Setup Notice')
+        .setDescription('Notice thisc command is a preview / demo / showcase of this command meaning this does not actually work, just showing you how this should work in V2')
+        .setFooter(version)
+        )
+
+        message.channel.send(new Discord.MessageEmbed()
+        .setColor(hexSat)
+        .setTitle
+        )
+    } else{
+        message.reply('There is no designated setup channel!\n The command is required to be ran in a channel named EXACTLY "saturnly-setup" or this command will not work!')
+    }
