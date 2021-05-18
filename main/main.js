@@ -776,16 +776,45 @@ client.on('guildMemberAdd', member => {
 });
 
 
-// Status
-client.on('ready', () => {
-    client.user.setActivity(`${ver}`, {
-        type:"STREAMING",
-        url: "https://www.twitch.tv/saturnxoffical"
-    });
 
-    console.log(`Bot ${ver} started successfully on ${client.user.tag}`)
-    console.log(`Status: "${status}" on type "${statustype}"`)
-});
 
+// Thank you !Pyro!#0967 for the use of this code below
+bot.on('ready', async () => {
+    fs.readdir('./commands/', (err, files) => {  
+      let commandfiles = files.filter(f => f.split('.').pop() === "js");
+      //Possible activities for randomizer
+      var activities = [
+        { text: () => `your server 😏`, type: 'WATCHING' },
+        { text: () => `with more than 20 commands`, type: 'PLAYING' },
+        { text: () => `The Simpsons`, type: 'WATCHING' },
+        { text: () => `DMs to post in Anon Channel`, type: "WATCHING" },
+        { text: () => `STAR WARS Battlefront II`, type: "PLAYING" },
+        { text: () => `you huff paint`, type: "WATCHING" },
+        { text: () => `not anime`, type: "WATCHING" },
+        { text: () => `with a knife`, type: "PLAYING" },
+        { text: () => `y'all act retarded`, type: "WATCHING" }
+      ];
+     
+  
+      //Automatic presence/randomizer
+      bot.user.setStatus('idle');
+      bot.user.setPresence({
+        status: 'online',
+      })
+      bot.setInterval(() => {
+        const activity = activities[Math.floor(Math.random() * activities.length)]; //Randomly picking activity from list above
+        const text = activity.text() //Renaming activity.text to text 
+        bot.user.setActivity(text, { type: activity.type }); //Actually setting activity
+        //We are setting up the logging for this event, making it look nice
+        const typeSplit = activity.type.toLowerCase().split('')
+        const upper = [typeSplit[0].toUpperCase()]
+        const shift = typeSplit.shift()
+        const push = typeSplit.unshift(upper[0])
+        console.log(`Event: Changed activity to "${typeSplit.join('')} ${text}"`) // Console log
+      }, 60000);
+  
+// thanks again !Pyro!#0967 for the status randomizer code
+      });
+  });
 // Log in to token (KEEP AT BOTTOM)
 client.login(token);   // you can get the token from settings.json (use your own)
