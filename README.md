@@ -1,20 +1,23 @@
-# Saturnly Bot
-Open Sourced Discord Bot
+# Saturnly the Discord Bot
+
+Made by @SaturnDev#3797
 
 
-Official code used for Saturnly.
 
-Don't judge how I coded things. Most things will be changed (eg the command handler) for better organization.
-This is my first ever attempt at a Discord bot, and basically an introduction for me to Discord.js and the API, mainly 
-training for V2. You could say in a way v1 is alpha v2
+# General Code Information
 
-Main problems with the bot will get fixed in V2
+Library: [discord.js](https://discord.js.org/#/)
+
+GitHub (your here lmao)
+
+[Support Server](https://discord.gg/wbP7YY5fXF)
+
+# How to Use
+
+I intend the bot to be used for scrapped of spare code for other [discord.js](https://discord.js.org/#/) developers, and NOT for use of using as your own bot, as the license states (in short terms) that you can use the code to your intent and any errors is on you, and not me. Also stated that you cannot reupload modified versions of the code.
 
 
-You can do whatever you want with this code, just please give credit, and dont distrubute (see licesne)
 
-Code is written & made by SaturnDev (@SaturnDev#3797)
+# Help & Issues
 
-I will not be giving how-to's on how to get a token and execute this code.
-I don't suggest using this code as a newcomer, and instead just make it yourself.
-
+Join our [support server,](https://discord.gg/wbP7YY5fXF) and send a message and I'll help you as long as it doesn't violate the license.
