@@ -748,13 +748,15 @@ client.on('message', message=>{
         )
 
     }
-} else {
-    message.channel.send(new Discord.MessageEmbed()
-    .setColor(hexSat)
-    .setTitle('❌ Invalid Command ❌')
-    .setDescription('That is not a valid command! \nYou can view all valid commands by running **.help**')
-    .setFooter(version)
-    )
+} else if(command === 'hug'){
+    const target = message.mentions.users.first();
+    let memberTarget= message.guild.members.cache.get(target.id);
+
+    message.channel.send(`${message.author.username} hugs <@${memberTarget.user.id}>`)
+    message.delete()
+} else{
+    message.author.send(`The command you ran isn't an actual command and is invalid! \n \nYou ran: \n${message.content}`)
+    message.delete()
 }
 
 // let invitelinkkkk = message.channel.createInvite(maxAge = 86400, maxUses = 1, temporary = false, reason = 'for error exports so devs can help with issues in your server')    
@@ -780,8 +782,8 @@ client.on('guildMemberAdd', member => {
 
 // Thank you !Pyro!#0967 for the use of this code below
 bot.on('ready', async () => {
-    fs.readdir('./commands/', (err, files) => {  
-      let commandfiles = files.filter(f => f.split('.').pop() === "js");
+    console.log('Bot is online!')
+     
       //Possible activities for randomizer
       var activities = [
         { text: () => `your server 😏`, type: 'WATCHING' },
@@ -814,7 +816,7 @@ bot.on('ready', async () => {
       }, 60000);
   
 // thanks again !Pyro!#0967 for the status randomizer code
-      });
+      
   });
 // Log in to token (KEEP AT BOTTOM)
 client.login(token);   // you can get the token from settings.json (use your own)

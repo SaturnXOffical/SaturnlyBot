@@ -2,7 +2,7 @@
 
 {
     "prefix": ".",
-    "ver": "v1.6.11",
+    "ver": "v1.6.12",
     "statustype": "STREAMING",
     "token": "removed, get your own token",
     "hexSat": "#FF4848"
